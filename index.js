@@ -249,6 +249,7 @@ var stringify = function (obj, prop) {
 
 var options = {
   explorer: true,
+  customCss: ".swagger-ui img {display:none} ",
   swaggerOptions: {
     urls: [
     ]
