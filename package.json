@@ -1,6 +1,6 @@
 {
-  "name": "swagger-ui-express",
-  "version": "4.1.3",
+  "name": "@moonfroglabs/mfl-swagger-ui",
+  "version": "4.1.5",
   "description": "Swagger UI Express",
   "main": "./index.js",
   "files": [
@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:scottie1984/swagger-ui-express.git"
+    "url": "git@github.com:moonfrog/swagger-ui-express.git"
   },
   "license": "MIT",
   "readmeFilename": "README.md",

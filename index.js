@@ -12,7 +12,7 @@ var htmlTplString = `
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><% title %></title>
+  <title>Moonfrog APIs : <% title %></title>
   <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
   <% favIconString %>
   <% customJs %>
@@ -247,10 +247,32 @@ var stringify = function (obj, prop) {
   return 'var options = ' + json + ';'
 }
 
+var options = {
+  explorer: true,
+  swaggerOptions: {
+    urls: [
+    ]
+  }
+}
+
+var mflInit = function (expressApp, baseApiUrl, urls) {
+
+
+  for (var i = 0; i < urls.length; i++) {
+    options.swaggerOptions.urls.push({
+      url: baseApiUrl + urls[i],
+      name: urls[i]
+    })
+  }
+
+  expressApp.use('/api-docs', serve, setup(null, options));
+}
+
 module.exports = {
   setup: setup,
   serve: serve,
   serveWithOptions: serveWithOptions,
   generateHTML: generateHTML,
-  serveFiles: serveFiles
+  serveFiles: serveFiles,
+  mflInit: mflInit
 }
